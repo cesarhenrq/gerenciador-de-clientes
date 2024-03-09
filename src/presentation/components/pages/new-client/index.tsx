@@ -8,7 +8,7 @@ import * as S from "./styles";
 
 import IProps from "./props";
 
-const NewClient = ({ handleSubmit }: IProps) => {
+const NewClient = ({ handleSubmit, error }: IProps) => {
   return (
     <S.Container>
       <div
@@ -27,8 +27,8 @@ const NewClient = ({ handleSubmit }: IProps) => {
         </Link>
         <Typography variant='h5'>Cadastrar novo cliente</Typography>
       </div>
-
       <Form onSubmit={handleSubmit} />
+      {error && <Typography color='error'>{error}</Typography>}
     </S.Container>
   );
 };
