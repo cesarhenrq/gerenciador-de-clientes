@@ -34,7 +34,15 @@ const SearchBar = ({ onSearch }: IProps) => {
   );
 
   return (
-    <Box component='form' noValidate autoComplete='off'>
+    <Box
+      component='form'
+      noValidate
+      autoComplete='off'
+      style={{
+        width: "100%",
+        marginBottom: "36px",
+      }}
+    >
       <S.Container>
         <MakeTextFields {...factoryProps} />
       </S.Container>
