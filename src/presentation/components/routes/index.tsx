@@ -2,7 +2,7 @@ import RouteFactory from "./route-factory";
 
 import { BaseLayout } from "@presentation/components/layouts";
 
-import { MakeClients } from "@main/factories/pages";
+import { MakeClients, MakeNewClient } from "@main/factories/pages";
 
 const routes = [
   {
@@ -11,6 +11,10 @@ const routes = [
       {
         path: "/clients",
         element: <MakeClients />,
+      },
+      {
+        path: "/new-client",
+        element: <MakeNewClient />,
       },
     ],
   },
