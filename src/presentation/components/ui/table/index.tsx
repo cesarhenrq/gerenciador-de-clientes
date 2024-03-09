@@ -10,6 +10,8 @@ import {
 
 import IProps from "./props";
 
+import { Formatter } from "@presentation/helpers";
+
 const Table = ({ data }: IProps) => {
   return (
     <TableContainer
@@ -36,7 +38,7 @@ const Table = ({ data }: IProps) => {
                 {row.name}
               </TableCell>
               <TableCell>{row.email}</TableCell>
-              <TableCell>{row.phone}</TableCell>
+              <TableCell>{Formatter.formatPhone(row.phone)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
