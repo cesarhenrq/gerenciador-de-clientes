@@ -34,6 +34,9 @@ const MakeTextFields = memo(({ search, handleChange }: IProps) => {
       name={input.name}
       value={search[input.name as keyof typeof search]}
       onChange={handleChange}
+      style={{
+        maxWidth: "calc(33.3333% - 16px)",
+      }}
     />
   ));
 });
