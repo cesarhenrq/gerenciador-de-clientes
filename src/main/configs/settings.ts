@@ -1,5 +1,5 @@
 const settings = {
-  API_URL: process.env.REACT_APP_API_URL,
+  API_URL: "http://localhost:3000/",
 };
 
 export default settings;
