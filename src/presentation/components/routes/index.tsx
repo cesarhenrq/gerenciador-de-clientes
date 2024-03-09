@@ -2,10 +2,17 @@ import RouteFactory from "./route-factory";
 
 import { BaseLayout } from "@presentation/components/layouts";
 
+import { MakeClients } from "@main/factories/pages";
+
 const routes = [
   {
     layout: BaseLayout,
-    pages: [],
+    pages: [
+      {
+        path: "/clients",
+        element: <MakeClients />,
+      },
+    ],
   },
 ];
 
