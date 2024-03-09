@@ -1,4 +1,4 @@
-import { UnexpectedError } from "@domain/errors";
+import { UnexpectedError, BadRequestError } from "@domain/errors";
 
 import { HttpStatusCode } from "@data/protocols/http/http-client";
 
@@ -26,6 +26,24 @@ export default class RemoteClients {
     switch (httpResponse.statusCode) {
       case HttpStatusCode.ok:
         return httpResponse.body as unknown as IResponse<IClient>;
+      default:
+        throw new UnexpectedError();
+    }
+  }
+
+  async post(body: Omit<IClient, "id">) {
+    const httpResponse = (await this.httpClient.request({
+      url: this.url,
+      method: "post",
+      data: body,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    })) as any;
+
+    switch (httpResponse.statusCode) {
+      case HttpStatusCode.created:
+        return httpResponse.body;
+      case HttpStatusCode.badRequest:
+        throw new BadRequestError(httpResponse.body?.message);
       default:
         throw new UnexpectedError();
     }
