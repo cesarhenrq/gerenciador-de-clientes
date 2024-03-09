@@ -47,6 +47,7 @@ const Form = ({ onSubmit }: IProps) => {
           value={fields.name}
           name='name'
           onChange={handleChange}
+          required
         />
         <TextField
           id='outlined-search-email'
@@ -58,6 +59,7 @@ const Form = ({ onSubmit }: IProps) => {
           name='email'
           value={fields.email}
           onChange={handleChange}
+          required
         />
         <TextField
           id='outlined-search-phone'
@@ -69,6 +71,7 @@ const Form = ({ onSubmit }: IProps) => {
           name='phone'
           value={fields.phone}
           onChange={handleChange}
+          required
         />
         <Button variant='contained' color='success' type='submit'>
           Cadastrar
