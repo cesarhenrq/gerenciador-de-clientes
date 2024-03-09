@@ -1,25 +1,43 @@
+import { useState, useEffect } from "react";
+
 import { Clients } from "@presentation/components/pages";
 
-import { ISearch } from "@presentation/interfaces";
+import { IClient, ISearch } from "@presentation/interfaces";
 
-function createData(name: string, email: string, phone: string) {
-  return { name, email, phone };
-}
-
-const rows = [
-  createData("Frozen yoghurt", "frozen@email.com", "123456789"),
-  createData("Ice cream sandwich", "ice@email@com", "987654321"),
-  createData("Eclair", "eclar@email.com", "123456789"),
-];
+import { makeRemoteClients } from "@main/usecases/clients";
 
 const MakeClients = () => {
-  const handleSearch = (search: ISearch) => {
-    console.log("searching...", search);
+  const [clients, setClients] = useState<IClient[]>([]);
+
+  useEffect(() => {
+    const remoteClients = makeRemoteClients();
+    const load = async () => {
+      try {
+        const response = await remoteClients.load();
+        setClients(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    load();
+  }, []);
+
+  const handleSearch = async (search: ISearch) => {
+    try {
+      const remoteClients = makeRemoteClients();
+
+      const response = await remoteClients.load(search);
+
+      setClients(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const props = {
     handleSearch,
-    data: rows as any,
+    data: clients,
   };
 
   return <Clients {...props} />;
