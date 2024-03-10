@@ -26,6 +26,8 @@ const Table = ({ data }: IProps) => {
             <TableCell>Nome</TableCell>
             <TableCell>Email</TableCell>
             <TableCell>Telefone</TableCell>
+            <TableCell>Coordenada X</TableCell>
+            <TableCell>Coordenada Y</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -39,6 +41,8 @@ const Table = ({ data }: IProps) => {
               </TableCell>
               <TableCell>{row.email}</TableCell>
               <TableCell>{Formatter.formatPhone(row.phone)}</TableCell>
+              <TableCell>{row.pos_x}</TableCell>
+              <TableCell>{row.pos_y}</TableCell>
             </TableRow>
           ))}
         </TableBody>
