@@ -1,30 +1,63 @@
-# React + TypeScript + Vite
+# Gerenciador de Clientes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto de gerenciamento de clientes desenvolvido em React + TypeScript.
 
-Currently, two official plugins are available:
+## Conteúdo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Funcionalidades](#funcionalidades)
+- [Instalação](#instalação)
+- [Uso](#uso)
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Cadastro de clientes
+- Visualização de lista de clientes
+- Visualizar a rota de visitação dos clientes
 
-- Configure the top-level `parserOptions` property like this:
+## Instalação
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/gerenciador-de-clientes.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Acesse o diretório do projeto:
+
+```bash
+cd gerenciador-de-clientes
+```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+ou
+
+```bash
+yarn
+```
+
+4. No arquivo `settings.ts` no diretório `src/main/configs` adicione a url da API.
+
+## Uso
+
+1. Inicie o servidor:
+
+```bash
+npm run dev
+```
+
+ou
+
+```bash
+yarn dev
+```
+
+2. Acesse o aplicativo no seu navegador:
+
+```bash
+http://localhost:5173 (ou a porta que você configurou)
+```
