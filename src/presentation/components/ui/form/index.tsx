@@ -11,6 +11,8 @@ const Form = ({ onSubmit }: IProps) => {
     name: "",
     email: "",
     phone: "",
+    pos_x: "",
+    pos_y: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,6 +72,30 @@ const Form = ({ onSubmit }: IProps) => {
           }}
           name='phone'
           value={fields.phone}
+          onChange={handleChange}
+          required
+        />
+        <TextField
+          id='outlined-search-pos_x'
+          label='Coordenada X'
+          type='search'
+          style={{
+            width: "100%",
+          }}
+          name='pos_x'
+          value={fields.pos_x}
+          onChange={handleChange}
+          required
+        />
+        <TextField
+          id='outlined-search-pos_y'
+          label='Coordenada Y'
+          type='search'
+          style={{
+            width: "100%",
+          }}
+          name='pos_y'
+          value={fields.pos_y}
           onChange={handleChange}
           required
         />
